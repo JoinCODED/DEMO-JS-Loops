@@ -1,21 +1,68 @@
-# DEMO-NAME
+# Loops Demo 🔁
 
-This is the template for demos. These repos are the starging points and instructions for short live-coding sessions where the instructor will demonstrate a specific concept.
+This demo shows how to use loops and goes over the main topics of `while` and the C-`for` loop
 
-## What is this demo?
+## Objective
 
-Explain what this demo is? Is it an incrementer? Is it a wand shop? Is it a text editor?  
+To show the importance of counter loops and transit from while to for
 
-## What are the objectives?
+# Steps
 
-Why do we need this demo? What concepts are covered?
+## If VS While
 
-## Steps
+```js
+// 1. Create a variable, an if statement to see if the variable is less than a number
+let counter = 0;
+if (counter < 10) {
+  console.log(`IF# counter is ${counter}, and I am inside the if statement`);
+}
+// 2. Create a while loop
+// the code will crash here, force stop it (control + C)
+while (counter < 10) {
+  console.log(`WHILE# counter is ${counter}, and I am inside the while `);
+}
 
-This is a **general overview** of the steps in this demo. You don't need to add details here.
+// 3. As long as the condition is true, it's going to loop.
+// How can we make it false?
+// Let's increment the counter after every loop
+// run, it should work!
+while (counter < 10) {
+  console.log(`WHILE# counter is ${counter}, and I am inside the while `);
+  counter++;
+}
+```
 
-## Instructor Notes
+## While VS For
 
-These are detailed notes written by various instructors. Feel free to use them or write your own.
+The structure of while with the counter is as follows
 
-* [Aziz's Notes](https://github.com/JoinCODED/DEMO-Template/blob/main/aziz.md)
+1. counter initial point `let counter = 0`
+2. condition to stop the counter (end point) `(counter < 10)`
+3. increment statement to move the counter toward the end point (incrementally or decremental) `counter++`
+
+Those 3 parts were conducted into one part, called `for`
+
+```js
+for (INITIAL_STATE; CONDITION; INCREMENT) {
+  // code here will be looping from initial state to condition
+}
+
+// 1. Convert the while to a for
+for (let counter2 = 0; counter2 < 10; counter2++) {
+  console.log(`FOR# counter is ${counter2}, and I am inside the for `);
+}
+// Check that you have access to the counter at every single loop
+```
+
+## loop inside a loop ➿
+
+```js
+// 1. What happens if we add a for inside a for?
+
+for (let i = 0; i < 3; i++) {
+  console.log(`I: ${i}`);
+  for (let j = 0; j < 3; j++) {
+    console.log(`J: ${j}`);
+  }
+}
+```
